@@ -88,7 +88,7 @@ foreach ($kantoArea as $pref => $city) {
   }
 }
 
-// in_array関数の第一引数が検索値なので仮変数の$prefを入れ、第二引数に関東の配列$kantoを入れる。
+// in_array関数の第一引数が検索値なのでキー変数に該当する$prefを入れ、第二引数に関東の配列$kantoを入れる。
 //これにより$kantoの中に$prefと一致する値があるかという条件になる。$prefに格納された値が関東の都県ならtrue判定、そうでなければfalse判定。
 //関東圏以外の都道府県が追加されても関東圏以外はfalseになるためif文に追記の必要がなく、こちらの方がコードがスッキリする。
 
@@ -156,13 +156,5 @@ echo evaluateGrade('B');
 echo evaluateGrade('E');
 echo "\n";
 
-function sayHi ($name)
-{
-    echo "こんにちは、田中さん\n";
-    return "こんにちは、" . $name . "さん\n";
-    echo "こんにちは、鈴木さん\n";
-}
 
-$name = "佐藤";
-echo sayHi($name);
 ?>
