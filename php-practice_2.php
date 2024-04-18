@@ -108,5 +108,32 @@ echo "\n";
 
 // Q5 定義済みクラス
 
+// 問題1
 
+$nowDate = new DateTime();
+$oneMonthAgo = $nowDate->modify('-1 month');
+echo $oneMonthAgo->format('Y-m-d') . "\n";
+
+// DateTimeクラスは日付や時刻を表現するクラスで、引数無しだと今日の日付のオブジェクトを生成。
+// 今日の日付を代入した変数$nowDateからDateTimeクラスのmodifyメソッドにアクセスし、引数に1か月前の日付を文字列で指定。
+// 1か月前の日付を代入した$oneMonthAgoからDateTimeクラスのformatプロパティにアクセスして、引数に日付や時刻の形式を文字列で指定。
+
+echo "\n";
+
+// 問題2
+
+$now = new DateTime();
+$past = new DateTime('1992/04/25');
+
+$dateInterval = $now->diff($past);
+$totalDateInterval = $dateInterval->format('%a日');
+
+echo 'あの日から' . $totalDateInterval . '経過しました。' . "\n";
+
+// 今日の日付と過去の日付を表すDateTimeインスタンスを生成し、今日の日付は$nowに、過去の日付は$pastに代入。
+// 片方のDateTimeインスタンスからDateTimeクラスのdiffプロパティにアクセスして日付の差分を出す。
+// diffプロパティにより、日付の間隔を表すDateIntervalクラスのインスタンスを生成し、$dateIntervalに代入。
+// DateIntervalインスタンスからDateIntervalクラスのformatプロパティにアクセスして表示形式を指定。
+// DateInterval::formatの引数に、定められたformat文字を使用。日数を出す部分は「%」から書き始め、今回はそこに総日数を表す「a」を指定。
+// $dateInterval::format('%a日')により$nowと$pastの差分の総日数が返り値となり、それを$totalDateIntervalに代入。
 ?>
