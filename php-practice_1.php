@@ -70,8 +70,8 @@ echo "\n";
 foreach ($kantoArea as $pref => $city) {
   if ($pref === '埼玉県') {
     echo $pref . 'の県庁所在地は、' . $city . 'です。' . "\n";
+    break;
   }
-  break;
 }
 
 echo "\n";
