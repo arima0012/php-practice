@@ -111,8 +111,8 @@ echo "\n";
 // 問題1
 
 $nowDate = new DateTime();
-$oneMonthAgo = $nowDate->modify('-1 month');
-echo $oneMonthAgo->format('Y-m-d') . "\n";
+echo $nowDate->modify('-1 month')->format('Y-m-d') . "\n";
+
 
 // DateTimeクラスは日付や時刻を表現するクラスで、引数無しだと今日の日付のオブジェクトを生成。
 // 今日の日付を代入した変数$nowDateからDateTimeクラスのmodifyメソッドにアクセスし、引数に1か月前の日付を文字列で指定。
@@ -125,8 +125,7 @@ echo "\n";
 $now = new DateTime();
 $past = new DateTime('1992/04/25');
 
-$dateInterval = $now->diff($past);
-$totalDateInterval = $dateInterval->format('%a日');
+$totalDateInterval = $now->diff($past)->format('%a日');
 
 echo 'あの日から' . $totalDateInterval . '経過しました。' . "\n";
 
